@@ -23,5 +23,21 @@ export const ACTIVITIES = [
         elevation: 42,
        featured: true,
         description: "Build a passion for sports and the sport skills needed to succeed."
+    },
+    {
+        id: 3,
+        name:"Karate",
+        image: "/assets/images/sports/sport1.jpg",
+        elevation: 42,
+       featured: true,
+        description: "Build a passion for sports and the sport skills needed to succeed."
+    },
+    {
+        id: 4,
+        name:"Swimming",
+        image: "/assets/images/sports/sport1.jpg",
+        elevation: 42,
+       featured: true,
+        description: "Build a passion for sports and the sport skills needed to succeed."
     }
 ];

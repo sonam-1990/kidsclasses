@@ -3,7 +3,7 @@ import Classes from './ClassesComponent';
 import Home from './HomeComponent';
 import ClassInfo from './ClassinfoComponent';
 import About from './AboutComponent';
-import Contact from './contactComponent';
+import Contact from './ContactComponent';
 import Constants from 'expo-constants';
 import { View, Platform ,StyleSheet} from 'react-native';
 import { Icon } from 'react-native-elements';

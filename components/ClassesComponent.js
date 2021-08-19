@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { ACTIVITIES } from '../shared/activities';
+import { PARTNERS } from '../shared/partners';
 
 class Classes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activities: ACTIVITIES
+            partners: PARTNERS
         };
     }
 
@@ -22,15 +23,15 @@ class Classes extends Component {
                 <ListItem
                     title={item.name}
                     subtitle={item.description}
-                    onPress={() => navigate('ClassInfo', { activityId: item.id })}
-                    leftAvatar={{ source: require('./images/music/music1.jpg')}}
+                    onPress={() => navigate('ClassInfo', { partnerId: item.id })}
+                    leftAvatar={{ source: require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}}
                 />
             );
         };
 
         return (
             <FlatList
-                data={this.state.activities}
+                data={this.state.partners}
                 renderItem={renderClassItem}
                 keyExtractor={item => item.id.toString()}
             />

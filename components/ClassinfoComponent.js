@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { Card } from 'react-native-elements';
-import { ACTIVITIES } from '../shared/activities';
+//import { ACTIVITIES } from '../shared/activities';
+import { PARTNERS } from '../shared/partners';
 
-function RenderClass({activity}) {
+function RenderClass({partner}) {
 
-    if (activity) {
+    if (partner) {
         return (
             <Card
-                featuredTitle={activity.name}
-                image={require('./images/music/music1.jpg')}
+                featuredTitle={partner.name}
+                image={require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}
             >
                 <Text style={{margin: 10}}>
-                    {activity.description}
+                    {partner.description}
                 </Text>
             </Card>
         );
@@ -25,7 +26,7 @@ class ClassInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activities: ACTIVITIES
+            partners: PARTNERS
         };
     }
 
@@ -34,9 +35,9 @@ class ClassInfo extends Component {
     }
 
     render() {
-        const activityId = this.props.navigation.getParam('activityId');
-        const activity = this.state.activities.filter(activity => activity.id === activityId)[0];
-        return <RenderClass activity={activity} />;
+        const partnerId = this.props.navigation.getParam('partnerId');
+        const partner = this.state.partners.filter(partner => partner.id === partnerId)[0];
+        return <RenderClass partner={partner} />;
     }
 }
 
