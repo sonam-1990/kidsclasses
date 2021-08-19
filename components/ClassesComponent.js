@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { ACTIVITIES } from '../shared/activities';
@@ -7,7 +7,7 @@ class Classes extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            campsites: CAMPSITES
+            activities: ACTIVITIES
         };
     }
 
@@ -39,4 +39,4 @@ class Classes extends Component {
 }
            
 
-export default Classses;
+export default Classes;

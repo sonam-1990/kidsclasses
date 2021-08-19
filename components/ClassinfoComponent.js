@@ -34,7 +34,7 @@ class ClassInfo extends Component {
     }
 
     render() {
-        const activityId = this.props.navigation.getParam('actvityId');
+        const activityId = this.props.navigation.getParam('activityId');
         const activity = this.state.activities.filter(activity => activity.id === activityId)[0];
         return <RenderClass activity={activity} />;
     }
