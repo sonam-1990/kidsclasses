@@ -30,7 +30,7 @@ const ClassesNavigator = createStackNavigator(
         initialRouteName: 'Classes',
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#0F5FE7'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -47,7 +47,7 @@ const HomeNavigator = createStackNavigator(
         
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#0F5FE7'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -69,7 +69,7 @@ const AboutNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#0F5FE7'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -91,7 +91,7 @@ const ContactNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#5637DD'
+                backgroundColor: '#0F5FE7'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -164,7 +164,7 @@ const MainNavigator = createDrawerNavigator(
     }
 },
     {
-        drawerBackgroundColor: '#CEC8FF'
+        drawerBackgroundColor: '#90B4F1'
     }
 );
 
