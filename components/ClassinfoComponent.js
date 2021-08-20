@@ -13,7 +13,8 @@ function RenderClass(props) {
         return (
             <Card
                 featuredTitle={partner.name}
-                image={require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}
+              //  image={require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}
+              
             >
                 <Text style={{margin: 10}}>
                     {partner.description}
