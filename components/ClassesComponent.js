@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
-import { Card, ListItem } from 'react-native-elements';
+import { Card, ListItem ,Avatar} from 'react-native-elements';
 import { ACTIVITIES } from '../shared/activities';
 import { PARTNERS } from '../shared/partners';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+import { Tile } from 'react-native-elements';
+
+const mapStateToProps = state => {
+    return {
+        partners: state.partners
+    };
+};
+
 
 class Classes extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            partners: PARTNERS
-        };
-    }
+    
 
     static navigationOptions = {
         title: 'Classes'
@@ -20,13 +25,16 @@ class Classes extends Component {
         const { navigate } = this.props.navigation;
         const renderClassItem = ({item}) => {
             return (
-               
+                   
                 <ListItem
+                
                     title={item.name}
                     subtitle={item.description}
                     onPress={() => navigate('ClassInfo', { partnerId: item.id })}
-                    leftAvatar={{ source: require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}}
+                    leftAvatar ={{source:{uri: baseUrl + item.image}}}
+                // leftAvatar={{ source: require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}}
                 />
+               
                 
             );
         };
@@ -34,7 +42,7 @@ class Classes extends Component {
         return (
             
             <FlatList
-                data={this.state.partners}
+                data={this.props.partners.partners}
                 renderItem={renderClassItem}
                 keyExtractor={item => item.id.toString()}
             />
@@ -44,4 +52,4 @@ class Classes extends Component {
 }
            
 
-export default Classes;
+export default connect(mapStateToProps)(Classes);

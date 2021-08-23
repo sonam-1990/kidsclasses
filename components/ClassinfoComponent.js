@@ -5,6 +5,15 @@ import { ScrollView } from 'react-native-gesture-handler';
 //import { ACTIVITIES } from '../shared/activities';
 import { PARTNERS } from '../shared/partners';
 import {REVIEWS} from '../shared/reviews';
+import { connect } from 'react-redux';
+import { baseUrl } from '../shared/baseUrl';
+
+const mapStateToProps = state => {
+    return {
+        partners: state.partners,
+        reviews: state.reviews
+    };
+};
 
 function RenderClass(props) {
     const {partner} = props;
@@ -14,8 +23,11 @@ function RenderClass(props) {
             <Card
                 featuredTitle={partner.name}
               //  image={require('./images/music/susan-mohr-pMCP8c8_xi4-unsplash.jpg')}
+             
+              image={{uri: baseUrl + partner.image}}>
+          
               
-            >
+           
                 <Text style={{margin: 10}}>
                     {partner.description}
                 </Text>
@@ -61,8 +73,7 @@ class ClassInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            partners: PARTNERS,
-            reviews:REVIEWS,
+            
             favorite: false
         };
     }
@@ -76,8 +87,8 @@ class ClassInfo extends Component {
 
     render() {
         const partnerId = this.props.navigation.getParam('partnerId');
-        const partner = this.state.partners.filter(partner => partner.id === partnerId)[0];
-        const reviews = this.state.reviews.filter(review => review.partnerId === partnerId);
+        const partner = this.props.partners.partners.filter(partner => partner.id === partnerId)[0];
+        const reviews = this.props.reviews.reviews.filter(review => review.partnerId === partnerId);
         return (
           <ScrollView>
         <RenderClass partner={partner} 
@@ -90,4 +101,4 @@ class ClassInfo extends Component {
     }
 }
 
-export default ClassInfo;
+export default connect(mapStateToProps)(ClassInfo);

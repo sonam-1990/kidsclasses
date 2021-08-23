@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 import { reviews } from './reviews';
+import { activities } from './activities';
 
 export const fetchReviews = () => dispatch => {
     return fetch(baseUrl + 'reviews')
@@ -51,7 +52,7 @@ export const fetchActivities = () => dispatch => {
                 throw errMess;
             })
         .then(response => response.json())
-        .then(campsites => dispatch(addActivities(campsites)))
+        .then(activities => dispatch(addActivities(activities)))
         .catch(error => dispatch(activitiesFailed(error.message)));
 };
 export const activitiesLoading = () => ({
@@ -65,7 +66,7 @@ export const activitieFailed = errMess => ({
 
 export const addActivities = activities => ({
     type: ActionTypes.ADD_ACTIVITIES,
-    payload: activitie
+    payload: activities
 });
 
 export const fetchPartners = () => dispatch => {

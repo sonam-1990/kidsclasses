@@ -10,6 +10,16 @@ import { Icon } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';
+import { connect } from 'react-redux';
+import { fetchActivities, fetchReviews, 
+    fetchPartners } from '../redux/ActionCreators';
+   
+   
+    const mapDispatchToProps = {
+        fetchActivities,
+        fetchReviews,
+        fetchPartners
+    };
 
 const ClassesNavigator = createStackNavigator(
     {
@@ -172,6 +182,12 @@ const AppNavigator = createAppContainer(MainNavigator)
 
 
 class Main extends Component {
+    componentDidMount() {
+        this.props.fetchActivities();
+        this.props.fetchReviews();
+        
+        this.props.fetchPartners();
+    }
     render() {
         return (
             <View style={{
@@ -192,4 +208,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Main;
+export default connect(null, mapDispatchToProps)(Main)

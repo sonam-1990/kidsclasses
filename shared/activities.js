@@ -19,7 +19,7 @@ export const ACTIVITIES = [
     {
         id: 2,
         name:"Sports",
-        image: "/assets/images/sports/sport1.jpg",
+        image: "/assets/images/sports/sport2.jpg",
         elevation: 42,
        featured: true,
         description: "Build a passion for sports and the sport skills needed to succeed."
@@ -27,7 +27,7 @@ export const ACTIVITIES = [
     {
         id: 3,
         name:"Karate",
-        image: "/assets/images/sports/sport1.jpg",
+        image: "/assets/images/sports/Karate.jpg",
         elevation: 42,
        featured: true,
         description: "Build a passion for sports and the sport skills needed to succeed."
